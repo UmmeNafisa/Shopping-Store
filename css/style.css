@@ -5,6 +5,7 @@ body {
 .search-field {
   margin-left: 420px;
   margin-top: 20px;
+  margin-bottom: 50px;
   padding: 5px;
   outline: none;
 }
@@ -36,13 +37,14 @@ body {
   justify-content: center;
 }
 .single-product {
+  background-color: rgb(255, 190, 212);
   padding: 10px;
   transition: 0.6s;
 }
 .single-product:hover {
   box-shadow: 4px 4px 7px gray;
   border-radius: 10px;
-  border: 1px solid cyan;
+  border: 1px solid rgb(47, 0, 255);
 }
 .product-image {
   width: 150px;
