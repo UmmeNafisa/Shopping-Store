@@ -22,6 +22,7 @@
     <h1 class="text-center">Welcome To <span class="text-danger">Shopping Store</span> </h1>
   </header>
   <main class="main">
+    <!-- search-field -->
     <div class="search-field form-inline mt-5 d-flex">
       <div class="search-box input-group col-md-6 mb-2">
         <input id="input-field" class="form-control rounded-3" type="text" />
@@ -30,12 +31,21 @@
         id="search-btn" onclick="loadProducts()">
         Search
       </button>
+
     </div>
-    <div class="row g-4">
-      <div class="col-md-9 col-lg-9 col-sm-7">
+    <!-- single product details -->
+    <div class="row">
+      <div id="single-product-details" class=" w-50 mx-auto col-md-4 col-lg-4 col-sm-3 g-4">
+      </div>
+    </div>
+
+    <!-- products details -->
+    <div class="row">
+      <div class="col-md-9 col-lg-9 col-sm-7 g-4">
         <div id="all-products" class="card-group">
         </div>
       </div>
+      <!-- cart details -->
       <div class="col-md-3 col-lg-3 col-sm-5 cart-main">
         <div class="cart" id="my-cart">
           <table class="table">

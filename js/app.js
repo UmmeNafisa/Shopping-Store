@@ -13,7 +13,7 @@ const showProducts = (products) => {
     const div = document.createElement("div");
     div.classList.add("product");
     div.innerHTML = `
-    <div class="single-product g-4 card">
+    <div class="single-product g-4 card h-100">
       <img class="product-image card-img-top" src=${product.image} >
         <div class="card-body card-part">
       <h4>${product.title}</h4>
@@ -22,7 +22,7 @@ const showProducts = (products) => {
       <h6>Rating: ${product.rating.rate} (${product.rating.count}) </h6>
       <div class="card-footer">
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
-      <button id="details-btn" class="btn btn-info">Details</button>
+      <button onclick="loadASingleProduct(${product.id})" id="details-btn" class="btn btn-info">Details</button>
     </div>
      
         </div>
@@ -35,7 +35,6 @@ let count = 0;
 const addToCart = (id, price) => {
   count++;
   updatePrice("price", price);
-
   updateTaxAndCharge();
   document.getElementById("total-Products").innerText = count;
   updateTotal();
@@ -87,5 +86,34 @@ const updateTotal = () => {
   document.getElementById("total").innerText = grandTotal;
 };
 
+// for a single product details API
+const loadASingleProduct = id => {
+  fetch(`https://fakestoreapi.com/products/${id}`)
+    .then((res) => res.json())
+    .then((data) => displaySingleProductDetails(data));
+}
 
-
+const displaySingleProductDetails = product => {
+  console.log(product)
+  const singleProduct = document.getElementById("single-product-details");
+  singleProduct.textContent = "";
+  window.scrollTo(0, 40);
+  const div = document.createElement("div");
+  div.classList.add("product");
+  div.innerHTML = `
+  <div class="single-product g-4 card h-100 text-center">
+    <img class="product-image card-img-top" src=${product.image} >
+      <div class="card-body card-part">
+    <h4>${product.title}</h4>
+    <p> Description: ${product.description}</p>
+    <h4 class="text-danger">Price: $ ${product.price}</h4>
+    <h6>Rating: ${product.rating.rate} (${product.rating.count}) </h6>
+    <div class="card-footer">
+    <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
+  </div>
+   
+      </div>
+    </div>
+    `;
+  singleProduct.appendChild(div);
+}
