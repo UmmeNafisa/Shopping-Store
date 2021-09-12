@@ -19,7 +19,8 @@ const showProducts = (products) => {
       <h4>${product.title}</h4>
       <p>Category: ${product.category}</p>
       <h4 class="text-danger">Price: $ ${product.price}</h4>
-      <h6>Rating: ${product.rating.rate} (${product.rating.count}) </h6>
+      <h6>Rating: ${product.rating.rate} </h6>
+      <h6> ${product.rating.count} peoples rated this product </h6>
       <div class="card-footer">
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
       <button onclick="loadASingleProduct(${product.id})" id="details-btn" class="btn btn-info">Details</button>
@@ -107,7 +108,8 @@ const displaySingleProductDetails = product => {
     <h4>${product.title}</h4>
     <p> Description: ${product.description}</p>
     <h4 class="text-danger">Price: $ ${product.price}</h4>
-    <h6>Rating: ${product.rating.rate} (${product.rating.count}) </h6>
+    <h6>Rating: ${product.rating.rate} </h6>
+      <h6> ${product.rating.count} peoples rated this product </h6>
     <div class="card-footer">
     <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
   </div>
