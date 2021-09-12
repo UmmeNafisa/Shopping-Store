@@ -18,16 +18,18 @@
 </head>
 
 <body>
-  <header></header>
+  <header>
+    <h1 class="text-center">Welcome To <span class="text-danger">Shopping Store</span> </h1>
+  </header>
   <main class="main">
-    <div class="search-field">
-      <div class="search-box">
-        <input id="input-field" class="search-field" type="text" />
-        <button type="button" class="btn btn-primary search-button" data-toggle="button" aria-pressed="false"
-          autocomplete="off" id="search-btn" onclick="loadProducts()">
-          Search
-        </button>
+    <div class="search-field form-inline mt-5 d-flex">
+      <div class="search-box input-group col-md-6 mb-2">
+        <input id="input-field" class="form-control rounded-3" type="text" />
       </div>
+      <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off"
+        id="search-btn" onclick="loadProducts()">
+        Search
+      </button>
     </div>
     <div class="row">
       <div class="col-md-9 col-lg-9 col-sm-7">
