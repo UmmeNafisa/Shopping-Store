@@ -17,7 +17,7 @@ const showProducts = (products) => {
       <div class="card h-100">
         <img class="product-image card-img-top" src=${product.image} >
           <div class="card-body card-part">
-            <h4>${product.title}</h4>
+            <h4 class="text-primary">${product.title}</h4>
             <p>Category: ${product.category}</p>
             <h4 class="text-danger">Price: $ ${product.price}</h4>
             <h6>Rating: ${product.rating.rate} </h6>
@@ -34,7 +34,7 @@ const showProducts = (products) => {
 // add to cart part
 let count = 0;
 const addToCart = (id, price) => {
-  window.scrollTo(0, 60);
+  window.scrollTo(0, 280);
   count++;
   updatePrice("price", price);
   updateTaxAndCharge();
@@ -106,7 +106,7 @@ const displaySingleProductDetails = product => {
   <div class="single-product g-4 card h-100 text-center">
     <img class="product-image card-img-top" src=${product.image} >
       <div class="card-body single-card-part">
-        <h4>${product.title}</h4>
+        <h4 class="text-primary">${product.title}</h4>
         <p> Description: ${product.description}</p>
         <h4 class="text-danger">Price: $ ${product.price}</h4>
         <h6>Rating: ${product.rating.rate} </h6>
