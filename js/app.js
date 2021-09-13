@@ -22,7 +22,7 @@ const showProducts = (products) => {
             <h4 class="text-danger">Price: $ ${product.price}</h4>
             <h6>Rating: ${product.rating.rate} </h6>
             <h6> ${product.rating.count} peoples rated this product </h6>
-            <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
+            <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">Add to cart</button>
             <button onclick="loadASingleProduct(${product.id})" id="details-btn" class="btn btn-info">Details</button>
           </div>
       </div>
@@ -106,15 +106,12 @@ const displaySingleProductDetails = product => {
   <div class="single-product g-4 card h-100 text-center">
     <img class="product-image card-img-top" src=${product.image} >
       <div class="card-body single-card-part">
-    <h4>${product.title}</h4>
-    <p> Description: ${product.description}</p>
-    <h4 class="text-danger">Price: $ ${product.price}</h4>
-    <h6>Rating: ${product.rating.rate} </h6>
-      <h6> ${product.rating.count} peoples rated this product </h6>
-    <div class="card-footer">
-    <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
-  </div>
-   
+        <h4>${product.title}</h4>
+        <p> Description: ${product.description}</p>
+        <h4 class="text-danger">Price: $ ${product.price}</h4>
+        <h6>Rating: ${product.rating.rate} </h6>
+        <h6> ${product.rating.count} peoples rated this product </h6>
+        <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">Add to cart</button>
       </div>
     </div>
     `;
