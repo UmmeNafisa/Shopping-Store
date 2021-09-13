@@ -13,21 +13,20 @@ const showProducts = (products) => {
     const div = document.createElement("div");
     div.classList.add("product");
     div.innerHTML = `
-    <div class="single-product g-4 card h-100">
-      <img class="product-image card-img-top" src=${product.image} >
-        <div class="card-body card-part">
-      <h4>${product.title}</h4>
-      <p>Category: ${product.category}</p>
-      <h4 class="text-danger">Price: $ ${product.price}</h4>
-      <h6>Rating: ${product.rating.rate} </h6>
-      <h6> ${product.rating.count} peoples rated this product </h6>
-      <div class="card-footer">
-      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
-      <button onclick="loadASingleProduct(${product.id})" id="details-btn" class="btn btn-info">Details</button>
-    </div>
-     
-        </div>
+    <div class="single-product g-4 col">
+      <div class="card h-100">
+        <img class="product-image card-img-top" src=${product.image} >
+          <div class="card-body card-part">
+            <h4>${product.title}</h4>
+            <p>Category: ${product.category}</p>
+            <h4 class="text-danger">Price: $ ${product.price}</h4>
+            <h6>Rating: ${product.rating.rate} </h6>
+            <h6> ${product.rating.count} peoples rated this product </h6>
+            <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
+            <button onclick="loadASingleProduct(${product.id})" id="details-btn" class="btn btn-info">Details</button>
+          </div>
       </div>
+     </div>
       `;
     document.getElementById("all-products").appendChild(div);
   }
@@ -102,7 +101,7 @@ const displaySingleProductDetails = product => {
   singleProduct.textContent = "";
   window.scrollTo(0, 40);
   const div = document.createElement("div");
-  div.classList.add("product");
+  div.classList.add("single-product-details");
   div.innerHTML = `
   <div class="single-product g-4 card h-100 text-center">
     <img class="product-image card-img-top" src=${product.image} >
