@@ -36,8 +36,8 @@ body {
   border: 1px solid rgb(22, 235, 235);
 }
 .product-image {
-  width: 50%;
-  height: 50%;
+  width: 200px;
+  height: 230px;
 }
 .card-part{
   padding-top: 10px;

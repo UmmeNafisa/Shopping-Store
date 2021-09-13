@@ -32,8 +32,10 @@ const showProducts = (products) => {
     document.getElementById("all-products").appendChild(div);
   }
 };
+// add to cart part
 let count = 0;
 const addToCart = (id, price) => {
+  window.scrollTo(0, 60);
   count++;
   updatePrice("price", price);
   updateTaxAndCharge();
@@ -83,7 +85,7 @@ const updateTotal = () => {
   let grandTotal =
     getInputValue("price") + getInputValue("delivery-charge") +
     getInputValue("total-tax");
-  // grandTotal = Number(parseFloat(grandTotal).toFixed(2))
+  grandTotal = Number(parseFloat(grandTotal).toFixed(2))
   document.getElementById("total").innerText = grandTotal;
 };
 
