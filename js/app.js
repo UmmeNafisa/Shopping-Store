@@ -101,11 +101,11 @@ const displaySingleProductDetails = product => {
   singleProduct.textContent = "";
   window.scrollTo(0, 40);
   const div = document.createElement("div");
-  div.classList.add("single-product-details");
+  div.classList.add("product");
   div.innerHTML = `
   <div class="single-product g-4 card h-100 text-center">
     <img class="product-image card-img-top" src=${product.image} >
-      <div class="card-body card-part">
+      <div class="card-body single-card-part">
     <h4>${product.title}</h4>
     <p> Description: ${product.description}</p>
     <h4 class="text-danger">Price: $ ${product.price}</h4>
